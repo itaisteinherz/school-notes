@@ -10,6 +10,8 @@ import {
 } from "react-accessible-accordion";
 
 import Layout from "../components/layout";
+
+import "react-accessible-accordion/dist/fancy-example.css";
 import "./index.css";
 
 const IndexPage = props => {
@@ -22,23 +24,25 @@ const IndexPage = props => {
 
 	return (
 		<Layout>
-			<h2 style={{textAlign: "center"}}>Subjects</h2>
-			<Accordion>
-				{subjects.map(arr => (
-					<AccordionItem key={arr[0].node.fields.slug.split("/")[1]}>
-						<AccordionItemTitle>{arr[0].node.fields.slug.split("/")[1]}</AccordionItemTitle>
-						{arr.map(({node}) => (
-							<AccordionItemBody key={node.frontmatter.title}>
-								<Link to={node.fields.slug} className="link">
-									<div className="post-list">
-										{node.frontmatter.title}
-									</div>
-								</Link>
-							</AccordionItemBody>
-						))}
-					</AccordionItem>
-				))}
-			</Accordion>
+			<h2 className="main_title">Subjects</h2>
+			<div className="subjects">
+				<Accordion>
+					{subjects.map(arr => (
+						<AccordionItem key={arr[0].node.fields.slug.split("/")[1]}>
+							<AccordionItemTitle>{arr[0].node.fields.slug.split("/")[1]}</AccordionItemTitle>
+							{arr.map(({node}) => (
+								<AccordionItemBody key={node.frontmatter.title}>
+									<Link to={node.fields.slug} className="link">
+										<div className="post-list">
+											{node.frontmatter.title}
+										</div>
+									</Link>
+								</AccordionItemBody>
+							))}
+						</AccordionItem>
+					))}
+				</Accordion>
+			</div>
 		</Layout>
 	);
 };
