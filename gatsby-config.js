@@ -1,7 +1,7 @@
 /* eslint camelcase:  ["error", {properties: "never"}] */
 module.exports = {
 	siteMetadata: {
-		title: "Gatsby Notes Starter"
+		title: "Itai's school notes"
 	},
 	plugins: [
 		"gatsby-plugin-react-helmet",

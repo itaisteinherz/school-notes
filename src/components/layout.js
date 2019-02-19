@@ -4,6 +4,8 @@ import Helmet from "react-helmet";
 import {StaticQuery, graphql} from "gatsby";
 
 import Header from "./header";
+import "normalize.css";
+import "github-markdown-css";
 import "./layout.css";
 
 const Layout = ({children}) => (
@@ -22,8 +24,9 @@ const Layout = ({children}) => (
 				<Helmet
 					title={data.site.siteMetadata.title}
 					meta={[
-						{name: "description", content: "Sample"},
-						{name: "keywords", content: "sample, something"}
+						{name: "description", content: "School notes website"},
+						{name: "keywords", content: "notes, school, student, education, online"},
+						{name: "viewport", content: "width=device-width, initial-scale=1"}
 					]}
 				>
 					<html lang="en"/>

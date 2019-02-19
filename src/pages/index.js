@@ -22,11 +22,11 @@ const IndexPage = props => {
 
 	return (
 		<Layout>
-			<h2 style={{textAlign: "center", fontFamily: "courier, monospace"}}>Subjects</h2>
+			<h2 style={{textAlign: "center"}}>Subjects</h2>
 			<Accordion>
 				{subjects.map(arr => (
 					<AccordionItem key={arr[0].node.fields.slug.split("/")[1]}>
-						<AccordionItemTitle>{arr[0].node.fields.slug.split("/")[1].toUpperCase()}</AccordionItemTitle>
+						<AccordionItemTitle>{arr[0].node.fields.slug.split("/")[1]}</AccordionItemTitle>
 						{arr.map(({node}) => (
 							<AccordionItemBody key={node.frontmatter.title}>
 								<Link to={node.fields.slug} className="link">
@@ -44,9 +44,7 @@ const IndexPage = props => {
 };
 
 IndexPage.propTypes = {
-	data: PropTypes.objectOf( // `data`
-		PropTypes.objectOf(PropTypes.string) // `markdownRemark`
-	).isRequired
+	data: PropTypes.object.isRequired
 };
 
 export default IndexPage;
