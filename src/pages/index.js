@@ -20,7 +20,6 @@ const IndexPage = props => {
 		.groupBy(node => node.node.fields.slug.split("/")[1])
 		.map(node => node) // Using ES6 shorthand to generate the objects
 		.value();
-	console.log(subjects);
 
 	return (
 		<Layout>

@@ -24,7 +24,7 @@ date: "${file.stat.ctime}"
 ---
 
 ${contents}
-			`.slice(1, -4))) // TODO: Figure out how to properly strip indentation here.
+			`.trim()))
 		.pipe(gulp.dest("src/pages/notes"));
 });
 
