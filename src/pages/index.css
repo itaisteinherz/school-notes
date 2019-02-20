@@ -31,7 +31,11 @@
 	font-weight: bold;
 }
 
-.accordion__body > a {
+.accordion__body:hover {
+	background-color: rgba(102, 206, 199, 0.2);
+}
+
+.note-link {
 	font-size: 16px;
 	text-decoration: none;
 	color: lightseagreen;

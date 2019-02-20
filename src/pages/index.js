@@ -30,13 +30,13 @@ const IndexPage = props => {
 						<AccordionItem key={arr[0].node.fields.slug.split("/")[1]}>
 							<AccordionItemTitle>{arr[0].node.fields.slug.split("/")[1]}</AccordionItemTitle>
 							{arr.map(({node}) => (
-								<AccordionItemBody key={node.frontmatter.title}>
-									<Link to={node.fields.slug} className="link">
-										<div className="post-list">
+								<Link key={node.frontmatter.title} to={node.fields.slug} className="note-link">
+									<AccordionItemBody>
+										<span>
 											{node.frontmatter.title}
-										</div>
-									</Link>
-								</AccordionItemBody>
+										</span>
+									</AccordionItemBody>
+								</Link>
 							))}
 						</AccordionItem>
 					))}
