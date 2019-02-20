@@ -5,7 +5,6 @@ import {StaticQuery, graphql} from "gatsby";
 
 import Header from "./header";
 import "normalize.css";
-import "github-markdown-css";
 import "./layout.css";
 
 const Layout = ({children}) => (
@@ -24,9 +23,9 @@ const Layout = ({children}) => (
 				<Helmet
 					title={data.site.siteMetadata.title}
 					meta={[
+						{name: "viewport", content: "width=device-width, initial-scale=1"},
 						{name: "description", content: "School notes website"},
-						{name: "keywords", content: "notes, school, student, education, online"},
-						{name: "viewport", content: "width=device-width, initial-scale=1"}
+						{name: "keywords", content: "notes, school, student, education, online"}
 					]}
 				>
 					<html lang="en"/>

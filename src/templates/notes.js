@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import {graphql} from "gatsby";
 
 import Layout from "../components/layout";
+import "github-markdown-css";
 import "./notes.css";
 
 const notes = props => {
@@ -27,7 +28,6 @@ export const query = graphql`
 			html
 			frontmatter {
 				title
-				description
 			}
 		}
 	}

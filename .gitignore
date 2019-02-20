@@ -1,3 +1,5 @@
+src/pages/notes/*
+!src/pages/notes/Example
 public
 .cache
 node_modules
