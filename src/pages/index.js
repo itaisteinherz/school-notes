@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {graphql, Link} from "gatsby";
-import * as _ from "lodash";
 import {
 	Accordion,
 	AccordionItem,
@@ -16,20 +15,29 @@ import "./index.css";
 
 const IndexPage = props => {
 	const notes = props.data.allMarkdownRemark;
-	const subjects = _.chain(notes.edges)
-		.groupBy(node => node.node.fields.slug.split("/")[1])
-		.map(node => node) // Using ES6 shorthand to generate the objects
-		.value();
+
+	const subjects = new Map();
+
+	for (const node of notes.edges) {
+		const subjectName = node.node.fields.slug.split("/")[1];
+
+		if (subjects.has(subjectName)) {
+			const currentNodes = subjects.get(subjectName);
+			subjects.set(subjectName, [...currentNodes, node]);
+		} else {
+			subjects.set(subjectName, [node]);
+		}
+	}
 
 	return (
 		<Layout>
 			<h2 className="main_title">Subjects</h2>
 			<div className="subjects">
 				<Accordion>
-					{subjects.map(arr => (
-						<AccordionItem key={arr[0].node.fields.slug.split("/")[1]}>
-							<AccordionItemTitle>{arr[0].node.fields.slug.split("/")[1]}</AccordionItemTitle>
-							{arr.map(({node}) => (
+					{Array.from(subjects.entries()).map(subjectArr => ( // eslint-disable-line unicorn/prefer-spread
+						<AccordionItem key={subjectArr[0]}>
+							<AccordionItemTitle>{subjectArr[0]}</AccordionItemTitle>
+							{subjectArr[1].map(({node}) => (
 								<Link key={node.frontmatter.title} to={node.fields.slug} className="note-link">
 									<AccordionItemBody>
 										<span>
