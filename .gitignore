@@ -5,3 +5,5 @@ public
 .cache
 node_modules
 yarn.lock
+*.env
+!example.env

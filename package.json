@@ -34,12 +34,14 @@
 	"scripts": {
 		"build": "gatsby build",
 		"develop": "gatsby develop",
-		"start": "npm run develop",
+		"predeploy": "gulp && npm run build",
+		"deploy": "netlify deploy --prod",
 		"test": "xo"
 	},
 	"devDependencies": {
 		"babel-eslint": "^10.0.1",
 		"del": "^3.0.0",
+		"dotenv": "^6.2.0",
 		"eslint": "^5.14.0",
 		"eslint-config-xo-react": "^0.18.0",
 		"eslint-plugin-react": "^7.12.4",
