@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import {StaticQuery, graphql} from "gatsby";
 
 import Header from "./header";
-import "normalize.css";
+import "modern-normalize"; // eslint-disable-line import/no-unassigned-import
 import "./layout.css";
 
 const Layout = ({children}) => (

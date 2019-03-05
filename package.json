@@ -18,7 +18,7 @@
 		"gatsby-transformer-sharp": "^2.1.8",
 		"github-markdown-css": "^3.0.1",
 		"katex": "^0.10.0",
-		"normalize.css": "^8.0.1",
+		"modern-normalize": "^0.5.0",
 		"prismjs": "^1.15.0",
 		"prop-types": "^15.7.2",
 		"react": "^16.6.3",
@@ -28,7 +28,10 @@
 		"remark-math": "^1.0.5"
 	},
 	"keywords": [
-		"gatsby"
+		"gatsby",
+		"notes",
+		"website",
+		"education"
 	],
 	"license": "MIT",
 	"scripts": {
