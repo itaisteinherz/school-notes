@@ -38,7 +38,7 @@
 		"build": "gatsby build",
 		"develop": "gatsby develop",
 		"predeploy": "gulp && npm run build",
-		"deploy": "netlify deploy --prod",
+		"deploy": "netlify deploy --dir public --prod",
 		"test": "xo"
 	},
 	"devDependencies": {
