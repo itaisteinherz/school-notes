@@ -1,6 +1,7 @@
 ---
-title: "Example note"
-date: "2018-02-19"
+title: Example note
+date: 2018-02-19
+description: A cool example note
 ---
 
 # My note
