@@ -1,7 +1,7 @@
 {
 	"name": "school-notes",
 	"description": "School notes website",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"author": "Itai Steinherz",
 	"dependencies": {
 		"gatsby": "^2.0.53",
