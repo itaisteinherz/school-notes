@@ -4,18 +4,12 @@ module.exports = {
 		title: "Itai's school notes"
 	},
 	plugins: [
-		"gatsby-plugin-react-helmet",
-		"gatsby-transformer-sharp",
-		"gatsby-plugin-sharp",
 		{
-			resolve: "gatsby-plugin-manifest",
+			resolve: "gatsby-source-filesystem",
 			options: {
-				name: "gatsby-starter-default",
-				short_name: "starter",
-				start_url: "/",
-				background_color: "#663399",
-				theme_color: "#663399",
-				display: "minimal-ui"
+				path: `${__dirname}/src/pages/notes`,
+				name: "pages",
+				ignore: ["**/Example"]
 			}
 		},
 		{
@@ -33,13 +27,26 @@ module.exports = {
 				]
 			}
 		},
+		"gatsby-transformer-sharp",
+		"gatsby-plugin-sharp",
 		{
-			resolve: "gatsby-source-filesystem",
+			resolve: "gatsby-plugin-google-analytics",
 			options: {
-				path: `${__dirname}/src/pages/notes`,
-				name: "pages",
-				ignore: ["**/Example"]
+				trackingId: "UA-142187776-2",
+				respectDNT: true
 			}
-		}
+		},
+		{
+			resolve: "gatsby-plugin-manifest",
+			options: {
+				name: "Itai's school notes",
+				short_name: "School notes",
+				start_url: "/",
+				background_color: "#ffffff",
+				theme_color: "#000000",
+				display: "minimal-ui"
+			}
+		},
+		"gatsby-plugin-react-helmet"
 	]
 };
