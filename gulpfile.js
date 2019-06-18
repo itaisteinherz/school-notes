@@ -4,11 +4,11 @@ const dotenv = require("dotenv");
 const gulp = require("gulp");
 const del = require("del");
 const rename = require("gulp-rename");
-const insert = require("gulp-insert");
+const {transform} = require("gulp-insert");
 
 dotenv.config();
 
-gulp.task("cleanup", () => {
+gulp.task("clean", () => {
 	return del(["src/pages/notes/**", "!src/pages/notes", "!src/pages/notes/Example/**"]);
 });
 
@@ -20,10 +20,10 @@ gulp.task("fetch:md", async () => {
 			path.dirname += `/${path.basename}`;
 			path.basename = "index";
 		}))
-		.pipe(insert.transform((contents, file) => `
+		.pipe(transform((contents, file) => `
 ---
 title: "${file.dirname.split(path.sep).pop()}"
-date: "${file.stat.ctime}"
+date: ${new Date(file.stat.ctime).toISOString()}
 ---
 
 ${contents}
@@ -33,4 +33,4 @@ ${contents}
 
 gulp.task("fetch", gulp.series("fetch:md"));
 
-gulp.task("default", gulp.series("cleanup", "fetch"));
+gulp.task("default", gulp.series("clean", "fetch"));

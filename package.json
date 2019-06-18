@@ -39,7 +39,7 @@
 		"develop": "gatsby develop",
 		"predeploy": "gulp && npm run build",
 		"deploy": "netlify deploy --dir public --prod",
-		"clean": "rm -rf .cache public",
+		"clean": "rm -rf .cache public && gulp clean",
 		"test": "xo"
 	},
 	"devDependencies": {
