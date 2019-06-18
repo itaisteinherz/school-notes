@@ -26,7 +26,7 @@ exports.createPages = ({actions, graphql}) => {
 				}
 			}
 		}
-		`).then(result => {
+		`).then(result => { // eslint-disable-line promise/prefer-await-to-then
 			if (result.errors) {
 				console.error(result.errors);
 				return reject(result.errors);

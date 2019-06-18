@@ -1,8 +1,31 @@
 {
 	"name": "school-notes",
-	"description": "School notes website",
 	"version": "1.0.0",
-	"author": "Itai Steinherz",
+	"description": "A central website which contains my school notes",
+	"license": "MIT",
+	"repository": "itaisteinherz/school-notes",
+	"author": {
+		"name": "Itai Steinherz",
+		"email": "itaisteinherz@gmail.com",
+		"url": "github.com/itaisteinherz"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"build": "gatsby build",
+		"develop": "gatsby develop",
+		"predeploy": "gulp && npm run build",
+		"deploy": "netlify deploy --dir public --prod",
+		"clean": "rm -rf .cache public && gulp clean",
+		"test": "xo"
+	},
+	"keywords": [
+		"gatsby",
+		"notes",
+		"website",
+		"education"
+	],
 	"dependencies": {
 		"gatsby": "^2.0.53",
 		"gatsby-image": "^2.0.20",
@@ -27,23 +50,7 @@
 		"react-helmet": "^5.2.0",
 		"remark-math": "^1.0.5"
 	},
-	"keywords": [
-		"gatsby",
-		"notes",
-		"website",
-		"education"
-	],
-	"license": "MIT",
-	"scripts": {
-		"build": "gatsby build",
-		"develop": "gatsby develop",
-		"predeploy": "gulp && npm run build",
-		"deploy": "netlify deploy --dir public --prod",
-		"clean": "rm -rf .cache public && gulp clean",
-		"test": "xo"
-	},
 	"devDependencies": {
-		"babel-eslint": "^10.0.1",
 		"del": "^3.0.0",
 		"dotenv": "^6.2.0",
 		"eslint": "^5.14.0",
@@ -54,12 +61,7 @@
 		"gulp-rename": "^1.4.0",
 		"xo": "^0.24.0"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/gatsbyjs/gatsby-starter-default"
-	},
 	"xo": {
-		"parser": "babel-eslint",
 		"extends": "xo-react",
 		"envs": [
 			"node",
