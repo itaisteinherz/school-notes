@@ -1,6 +1,7 @@
 {
 	"name": "school-notes",
 	"version": "1.0.0",
+	"private": true,
 	"description": "A central website which contains my school notes",
 	"license": "MIT",
 	"repository": "itaisteinherz/school-notes",
